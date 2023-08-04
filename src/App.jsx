@@ -1,35 +1,56 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import {Form} from "../src/Form/Form.jsx"
+import { useId } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [activitys, setActivitys] =useState([])
+
+  // function handleAcitivy(newactivity){
+
+  //   const activityWithId = {...newactivity, id: useId()}
+  //   setActivitys([...activitys, activityWithId])
+    
+  // }
+
+
+  
+
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Classy Weather APP</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+        <div>
+          <List/>
+          <Form activitys={activitys} setActivitys={setActivitys}/>
+        </div>
+       
     </>
   )
 }
 
 export default App
+
+try {
+  console.log("Liste: ",activitys[1].textValue)
+  console.log("Liste: ",activitys[1].checked)
+} catch (error) {
+  console.log(error)
+}
+
+
+export function List(){
+  return(
+    <div>
+      <h2>My List</h2>
+      <ul>
+        {/* {activitys ?? [].map((activity, index)=>(
+          <li key={index}>{activity.textValue}</li>
+        ))} */}
+      </ul>
+    </div>
+
+    
+  )
+}
