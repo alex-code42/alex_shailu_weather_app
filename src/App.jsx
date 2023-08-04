@@ -1,29 +1,24 @@
 import { useState } from 'react'
 import './App.css'
 import {Form} from "../src/Form/Form.jsx"
-import { useId } from 'react';
+import { uid } from 'uid';
+// import { List } from './List';
 
 function App() {
 
-  const [activitys, setActivitys] =useState([])
+  const [activities, setActivities] =useState([])
 
-  // function handleAcitivy(newactivity){
+  function handleAddActivity(){
+    const newActivityWithID = {id: uid(),...activities}
+    setactivities([...activities,newActivityWithID])
 
-  //   const activityWithId = {...newactivity, id: useId()}
-  //   setActivitys([...activitys, activityWithId])
-    
-  // }
-
-
-  
-
-
+  }
+  console.log(activities);
 
   return (
     <>
         <div>
-          <List/>
-          <Form activitys={activitys} setActivitys={setActivitys}/>
+          <Form onAddActivity={activities} handleAddActivity={handleAddActivity}/>
         </div>
        
     </>
@@ -31,26 +26,3 @@ function App() {
 }
 
 export default App
-
-try {
-  console.log("Liste: ",activitys[1].textValue)
-  console.log("Liste: ",activitys[1].checked)
-} catch (error) {
-  console.log(error)
-}
-
-
-export function List(){
-  return(
-    <div>
-      <h2>My List</h2>
-      <ul>
-        {/* {activitys ?? [].map((activity, index)=>(
-          <li key={index}>{activity.textValue}</li>
-        ))} */}
-      </ul>
-    </div>
-
-    
-  )
-}

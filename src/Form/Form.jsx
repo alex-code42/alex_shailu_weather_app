@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-export function Form({activitys, setActivitys}) {
+export function Form({onAddActivity}) {
   const [formData, setFormData] = useState({
-    textValue: '',
-    checked: false,
+    name: '',
+    isForGoodWeather: false,
   });
   
 
@@ -17,8 +17,10 @@ export function Form({activitys, setActivitys}) {
     e.preventDefault();
     console.log("Array", formData); 
    
-    setActivitys([...activitys,formData])
-    console.log(activitys)
+    // onAddActivity(formData)
+
+    // 
+    // console.log(activities)
     
 
     // This will output the values to the console
@@ -32,16 +34,15 @@ export function Form({activitys, setActivitys}) {
       <input
         type="text"
         id="textValue"
-        name="textValue"
-        value={formData.textValue}
+        name="activityName"
         onChange={handleChange}
       />
 
-      <label htmlFor="checked">Good-weather-activity:</label>
+      <label htmlFor="checked">Good Weather Activity:</label>
       <input
         type="checkbox"
         id="checked"
-        name="checked"
+        name="weathercheckbox"
         checked={formData.checked}
         onChange={handleChange}
       />
