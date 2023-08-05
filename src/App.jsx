@@ -2,27 +2,30 @@ import { useState } from 'react'
 import './App.css'
 import {Form} from "../src/Form/Form.jsx"
 import { uid } from 'uid';
+
+import useLocalStorageState from "use-local-storage-state";
+import { List } from './List';
 // import { List } from './List';
 
-function App() {
+export default function App() {
 
-  const [activities, setActivities] =useState([])
+  const [activities, setactivities] = useLocalStorageState('todos', {
+    defaultValue: []
+})
 
-  function handleAddActivity(){
-    const newActivityWithID = {id: uid(),...activities}
-    setactivities([...activities,newActivityWithID])
-
-  }
-  console.log(activities);
+  console.log("App-Activities",activities)
+  const handleAddActivity = (activity) => {
+    setactivities([...activities, activity]);
+  };
 
   return (
     <>
         <div>
-          <Form onAddActivity={activities} handleAddActivity={handleAddActivity}/>
+          <h1>The Classy Weather App 🌻</h1>
+          <List activities={activities}/>
+          <Form onAddActivity={handleAddActivity} />
         </div>
        
     </>
   )
 }
-
-export default App

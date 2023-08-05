@@ -1,53 +1,41 @@
-import React, { useState } from 'react';
+import './Form.css';
 
-export function Form({onAddActivity}) {
-  const [formData, setFormData] = useState({
-    name: '',
-    isForGoodWeather: false,
-  });
-  
+export function Form({ onAddActivity }) {
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const newValue = type === 'checkbox' ? checked : value;
-    setFormData((prevState) => ({ ...prevState, [name]: newValue }));
-  };
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    onAddActivity(data);
+    console.log(data)
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Array", formData); 
-   
-    // onAddActivity(formData)
-
-    // 
-    // console.log(activities)
+  }
     
 
-    // This will output the values to the console
-    // You can use the formData object for further processing or send it to an API
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
-        <h2>Add new Activity</h2>
-      <label htmlFor="textValue">Name:</label>
-      <input
-        type="text"
-        id="textValue"
-        name="activityName"
-        onChange={handleChange}
-      />
-
-      <label htmlFor="checked">Good Weather Activity:</label>
-      <input
-        type="checkbox"
-        id="checked"
-        name="weathercheckbox"
-        checked={formData.checked}
-        onChange={handleChange}
-      />
-
-      <button type="submit">Submit</button>
+    <form className='form' onSubmit={handleSubmit}>
+      <div>
+        <h2>Add new Activity 🥊</h2>
+        <label htmlFor="textValue">Name:</label>
+        <input
+          type="text"
+          id="activityInput"
+          name="activityInput"
+          className='box'
+          
+        />
+      </div>
+      <div className='check'>
+        <label  htmlFor="checked">Good Weather Activity:</label>
+        <input
+          type="checkbox"
+          id="isForGoodWeather"
+          name="isForGoodWeather"
+          className='goodweather'
+          
+        />
+      </div>
+      <button id='pressbutton' type="submit">Submit</button>
     </form>
   );
 }
