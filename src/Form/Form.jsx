@@ -1,4 +1,5 @@
 import './Form.css';
+import { useState } from 'react'
 
 export function Form({ onAddActivity }) {
 
@@ -8,8 +9,14 @@ export function Form({ onAddActivity }) {
     const data = Object.fromEntries(formData);
     onAddActivity(data);
     console.log(data)
+    event.target.reset();
 
   }
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (event) => {
+    setIsChecked(event.target.checked);
+  };
     
 
   return (
@@ -22,6 +29,8 @@ export function Form({ onAddActivity }) {
           id="activityInput"
           name="activityInput"
           className='box'
+          checked={isChecked}
+          onChange={handleCheckboxChange}
           
         />
       </div>
@@ -32,10 +41,10 @@ export function Form({ onAddActivity }) {
           id="isForGoodWeather"
           name="isForGoodWeather"
           className='goodweather'
-          
+
         />
       </div>
-      <button id='pressbutton' type="submit">Submit</button>
+      <button id='pressbutton' type="submit">Add</button>
     </form>
   );
 }
