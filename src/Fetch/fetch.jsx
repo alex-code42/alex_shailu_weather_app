@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-export function WeatherList() {
-  const [weather, setweather] = useState([]);
+export function WeatherList({weather, setweather}) {
+  
  
 
-  console.log(weather)
+  console.log(weather.condition)
 
   useEffect(() => {
     async function loadweather() {
@@ -12,16 +12,18 @@ export function WeatherList() {
         const response = await fetch(
           `https://example-apis.vercel.app/api/weather`
         );
-        const weather = await response.json();
-        console.log(weather);
+        const data = await response.json();
+        setweather(data)
        
-        console.log(weather)
+        console.log(weather.condition)
+        console.log(weather.temperature)
       } catch (error) {
         console.log(error);
       }
     }
 
     loadweather();
-  }, []);
-  return(<h1>Hallo</h1>)
+  },1 );
+
+  return(<h1>{weather.temperature} {weather.condition}</h1>)
 }
