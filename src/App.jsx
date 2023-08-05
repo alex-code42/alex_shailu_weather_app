@@ -5,30 +5,21 @@ import { uid } from 'uid';
 import useLocalStorageState from "use-local-storage-state";
 // import { List } from './List';
 
-function App() {
+export default function App() {
 
-  const [activities, setactivities] = useLocalStorageState("activities", {
-    defaultValue: [],
-  });
+  const [activities, setactivities] = useState([]);
 
-
- function handleAddActivty({activityInput, isForGoodWeather}){
-    const newActivity ={
-      activityText: activityInput,
-      isForGoodWeather: isForGoodWeather
-    };
-
-    setactivities ([...activities, newActivity]);
+  console.log("App-Activities",activities)
+  const handleAddActivity = (activity) => {
+    setactivities([...activities, activity]);
   };
 
   return (
     <>
         <div>
-          <Form handleAddActivity={handleAddActivty} />
+          <Form onAddActivity={handleAddActivity} />
         </div>
        
     </>
   )
 }
-
-export default App
