@@ -3,7 +3,7 @@ import './List.css';
 export function List({ activities, isGoodWeather, onDeleteActivity}) {
 
 
-  console.log("activities",activities[0].id)
+ 
 
     return (
       <div>

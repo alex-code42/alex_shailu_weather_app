@@ -89,7 +89,15 @@ border-color: #0d6efd;
   .list {
     position: relative;
     right: 30px;
+    padding: 0px;
+    
     
   }
-
+/* .list p{
+  font-size: 40px;
+  padding: 0px;
 }
+}
+.buttonToDelete{
+  margin-top: 40px;
+} */
