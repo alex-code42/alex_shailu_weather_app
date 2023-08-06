@@ -1,8 +1,8 @@
 import './Form.css';
 import { useState } from 'react'
 
-export function Form({ handleAddActivity }) {
-
+export function Form({ handleAddActivity, }) {
+  const [isChecked, setIsChecked] = useState(false);
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -10,12 +10,15 @@ export function Form({ handleAddActivity }) {
     handleAddActivity(data);
     console.log(data)
     event.target.reset();
-
+    console.log("isForGoodWeather",isForGoodWeather)
   }
-  const [isChecked, setIsChecked] = useState(false);
+  
 
+  console.log(isChecked)
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
+
+    
   };
     
 
@@ -29,8 +32,7 @@ export function Form({ handleAddActivity }) {
           id="activityInput"
           name="activityInput"
           className='box'
-          checked={isChecked}
-          onChange={handleCheckboxChange}
+ 
           
         />
       </div>
@@ -41,7 +43,8 @@ export function Form({ handleAddActivity }) {
           id="isForGoodWeather"
           name="isForGoodWeather"
           className='goodweather'
-
+          checked={isChecked}
+          onChange={handleCheckboxChange}
         />
       </div>
       <button id='pressbutton' type="submit">Add</button>
