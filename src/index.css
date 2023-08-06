@@ -29,22 +29,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #ee7752, #3253e7, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ee7752, #3253e7, #23a6d5, #0091ff);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
 
-@keyframes gradient {
-  0% {
-      background-position: 0% 50%;
-  }
-  50% {
-      background-position: 100% 50%;
-  }
-  100% {
-      background-position: 0% 50%;
-  }
-}
+
 
 
 h1 {
@@ -73,7 +63,11 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    
+    /* color: #213547;
+    background-color: #ffffff; */
+  }
+  body{
     background-color: #ffffff;
   }
   a:hover {

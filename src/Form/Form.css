@@ -14,7 +14,7 @@ border-radius: .25rem;
 transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 color: #0d6efd;
 border-color: #0d6efd;
-box-shadow: 7px 3px 3px rgb(113, 146, 255);
+box-shadow: 7px 3px 3px rgb(0, 0, 0);
     
 }
 
@@ -42,3 +42,22 @@ border-radius: .25rem;
 border-color: #0d6efd;
 box-shadow: 7px 3px 3px rgb(113, 146, 255);
 }
+
+@media only screen and (max-width: 500px) {
+ 
+
+    .form {
+      position: relative;
+      align-items: center;
+      height: 320px;
+      top: 30px;
+      margin-bottom: 50px;
+      right: 20px;
+      left: 0px;
+      font-size: 1.7rem;
+    }
+    .box{
+        height: 50px;
+    }
+  
+  }
