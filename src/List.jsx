@@ -13,7 +13,7 @@ export function List({ activities, isGoodWeather, onDeleteActivity}) {
             <li className="list" key={id}>
               <p>{activity.activityText}</p>
               {/* <p>Good Weather Activity: {activity.weathercheckbox ? 'Yes' : 'No'}</p> */}
-              <button name="horst" type="button" onClick={() => onDeleteActivity(activity.id)}></button>
+              <button name="horst" className='buttonToDelete' type="button" onClick={() => onDeleteActivity(activity.id)}>X</button>
             </li>
           ))}
         </ul>

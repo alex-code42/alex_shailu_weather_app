@@ -18,7 +18,6 @@ console.log(activities)
 function handleDeleteActivity(id) {
   console.log("button clicked to delete", id )
   const newactivities = activities.filter((activity) => activity.id !== id);
-
   setactivities(newactivities);
 }
 
