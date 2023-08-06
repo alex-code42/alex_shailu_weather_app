@@ -1,13 +1,13 @@
 import './Form.css';
 import { useState } from 'react'
 
-export function Form({ onAddActivity }) {
+export function Form({ handleAddActivity }) {
 
   function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-    onAddActivity(data);
+    handleAddActivity(data);
     console.log(data)
     event.target.reset();
 

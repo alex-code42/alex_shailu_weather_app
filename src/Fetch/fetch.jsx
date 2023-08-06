@@ -1,3 +1,4 @@
+import './fetch.css';
 import { useEffect, useState } from "react";
 
 export function WeatherList({weather, setweather}) {
@@ -23,7 +24,7 @@ export function WeatherList({weather, setweather}) {
     }
 
     loadweather();
-  },1 );
+  }, [1]);
 
   return(<h1>{weather.temperature} {weather.condition}</h1>)
 }

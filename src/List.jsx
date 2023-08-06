@@ -1,15 +1,19 @@
 import './List.css';
 
-export function List({ activities, isGoodWeather}) {
-    
+export function List({ activities, isGoodWeather, onDeleteActivity}) {
+
+
+  console.log("activities",activities[0].id)
+
     return (
       <div>
         <h2>List of Activities</h2>
         <ul>
-            {activities.filter(activity => activity.isForGoodWeather === isGoodWeather).map((activity, index) => (
-            <li className="list" key={index}>
-              <p>{activity.activityInput}</p>
+            {activities.filter(activity => activity.isGoodWeather === isGoodWeather).map((activity, id) => (
+            <li className="list" key={id}>
+              <p>{activity.activityText}</p>
               {/* <p>Good Weather Activity: {activity.weathercheckbox ? 'Yes' : 'No'}</p> */}
+              <button name="horst" type="button" onClick={() => onDeleteActivity(activity.id)}></button>
             </li>
           ))}
         </ul>
