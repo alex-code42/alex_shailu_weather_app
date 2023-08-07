@@ -3,11 +3,9 @@ import './List.css';
 export function List({ activities,isForGoodWeather, onDeleteActivity}) {
 
 
-    console.log("Activities_List", activities)
-    console.log("isForGoodWeather",isForGoodWeather)
     
+    console.log(" Parameter isForGoodWeather in List",isForGoodWeather)
     // isForGoodWeather = undefined;
-    console.log("isForGoodWeather",isForGoodWeather)
 
     return (
       <div>
@@ -17,7 +15,7 @@ export function List({ activities,isForGoodWeather, onDeleteActivity}) {
             <li className="list" key={id}>
               <p>{activity.activityText}</p>
               {/* <p>Good Weather Activity: {activity.weathercheckbox ? 'Yes' : 'No'}</p> */}
-              <button name="horst" className='buttonToDelete' type="button" onClick={() => onDeleteActivity(activity.id)}>X</button>
+              <button name="horst" className='buttonToDelete' type="button" onClick={() => onDeleteActivity(activity.id)}>🗑️</button>
             </li>
           ))}
         </ul>
