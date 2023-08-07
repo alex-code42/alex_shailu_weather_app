@@ -37,10 +37,19 @@ body {
     /* Light Blue */ #40E0D0 /* Turquoise */
   );
   background-size: cover;
-  animation: gradient 15s ease infinite;
+
+  
 }
 
-
+.badweather {
+ background: linear-gradient(
+    135deg,
+    #0a26d7,
+    /* Deep Pink */ #486dae,
+    /* Light Salmon */ #8dafbb,
+    /* Light Blue */ #2ea397 /* Turquoise */
+  );
+}
 
 
 h1 {
