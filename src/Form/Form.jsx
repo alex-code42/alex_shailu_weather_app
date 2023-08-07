@@ -1,5 +1,4 @@
 import './Form.css';
-import { useState } from 'react'
 
 export function Form({ handleAddActivity }) {
   
@@ -9,7 +8,7 @@ export function Form({ handleAddActivity }) {
     const isForGoodWeather = event.target.elements.isForGoodWeather.checked
     const textTitle = event.target.elements.activityInput.value
     const data = {
-      textTitle: textTitle,
+      textTitle: textTitle.toUpperCase(),
       isForGoodWeather: isForGoodWeather,
     }
     handleAddActivity(data);

@@ -10,6 +10,7 @@ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans
 border: 1px solid transparent;
 padding: 6px 12px;
 font-size: 1rem;
+margin-top: 20px;
 margin-bottom: 10px;
 border-radius: .25rem;
 transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;

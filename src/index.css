@@ -29,8 +29,14 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(-45deg, #ee7752, #3253e7, #23a6d5, #0091ff);
-  background-size: 400% 400%;
+  background: linear-gradient(
+    135deg,
+    #0a26d7,
+    /* Deep Pink */ #5d8dde,
+    /* Light Salmon */ #ADD8E6,
+    /* Light Blue */ #40E0D0 /* Turquoise */
+  );
+  background-size: cover;
   animation: gradient 15s ease infinite;
 }
 
